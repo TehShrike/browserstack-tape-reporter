@@ -1,2 +1,1 @@
-# browserstack-tape-reporter
-[![NPM](https://nodei.co/npm/browserstack-tape-reporter.png)](https://nodei.co/npm/browserstack-tape-reporter/)
+Run your [tape](https://github.com/substack/tape) tests on BrowserStack!
