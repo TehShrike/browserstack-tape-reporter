@@ -1,6 +1,6 @@
 {
   "name": "browserstack-tape-reporter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Run your tape tests on BrowserStack",
   "main": "index.js",
   "scripts": {
