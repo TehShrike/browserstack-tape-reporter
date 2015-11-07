@@ -11,5 +11,3 @@ And launch the [browserstack-runner](https://github.com/browserstack/browserstac
 Requires tape >=4.1.0 and browserstack-runner >=0.3.7.
 
 More info can be found in [this blog post](http://joshduff.com/#!/post/2015-08-automated-testing-with-tape-and-browserstack.md).
-
-Note: if you're using Webpack, you may need to put browserstack-tape-reporter at the beginning of your entries.  See [#3](https://github.com/TehShrike/browserstack-tape-reporter/issues/3#issuecomment-154742405)
