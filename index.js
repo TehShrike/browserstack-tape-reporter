@@ -21,7 +21,7 @@ function pollReport () {
 
 function postReport () {
   var log = logs[i++]
-  log
+  log !== void 0
   ? window.BrowserStack.post('/_log', log.trim(), postReport)
   : window.BrowserStack.post('/_report', {
     runtime: new Date().getTime() - start.getTime(),
