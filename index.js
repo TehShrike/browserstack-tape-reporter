@@ -29,5 +29,5 @@ function postReport () {
     passed: results.pass,
     failed: results.fail,
     tracebacks: []
-  })
+  }, function () {})
 }
