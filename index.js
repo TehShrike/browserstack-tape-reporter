@@ -14,11 +14,9 @@ function storeLogs (data) {
 }
 
 function pollReport () {
-  setTimeout(function () {
-    window.BrowserStack
-    ? postReport()
-    : pollReport()
-  }, 500)
+  window.BrowserStack
+  ? postReport()
+  : setTimeout(pollReport, 500)
 }
 
 function postReport () {
