@@ -1,6 +1,5 @@
 'use strict'
 var tape = require('tape')
-var results = tape.getHarness()._results
 var start = new Date()
 var logs = ''
 
@@ -25,6 +24,7 @@ function postLogs () {
 }
 
 function postReport () {
+  var results = tape.getHarness()._results
   window.BrowserStack.post('/_report', {
     runtime: new Date().getTime() - start.getTime(),
     total: results.count,
