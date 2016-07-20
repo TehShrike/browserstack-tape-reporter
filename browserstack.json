@@ -5,5 +5,15 @@
     "browser_version": "latest",
     "os": "OS X",
     "os_version": "Lion"
+  }, {
+    "browser": "firefox",
+    "browser_version": "latest",
+    "os": "OS X",
+    "os_version": "Lion"
+  }, {
+    "browser": "safari",
+    "browser_version": "latest",
+    "os": "OS X",
+    "os_version": "Lion"
   }]
 }

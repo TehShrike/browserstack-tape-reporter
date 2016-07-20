@@ -19,7 +19,7 @@ function pollReport () {
 
 function postLogs () {
   logs
-  ? window.BrowserStack.post('/_log', logs, postReport)
+  ? window.BrowserStack.post('/_log', '\n' + logs + '\n ', postReport)
   : postReport
 }
 
