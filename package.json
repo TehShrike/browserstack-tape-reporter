@@ -4,7 +4,7 @@
   "description": "Run your tape tests on BrowserStack",
   "main": "index.js",
   "scripts": {
-    "start": "browserify index.js example/index.js -o example/bundle.js && browserstack-runner | tap-difflet",
+    "example": "browserify index.js example/index.js -o example/bundle.js && cd example && browserstack-runner | tap-difflet",
     "test": "echo \"Error: no test specified :-(\" && exit 0"
   },
   "repository": {
