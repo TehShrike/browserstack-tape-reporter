@@ -4,6 +4,7 @@
   "description": "Run your tape tests on BrowserStack",
   "main": "index.js",
   "scripts": {
+    "example": "browserify index.js example/index.js -o example/bundle.js && cd example && browserstack-runner | tap-difflet",
     "test": "echo \"Error: no test specified :-(\" && exit 0"
   },
   "repository": {
@@ -21,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/TehShrike/browserstack-tape-reporter/issues"
   },
-  "homepage": "https://github.com/TehShrike/browserstack-tape-reporter#readme"
+  "homepage": "https://github.com/TehShrike/browserstack-tape-reporter#readme",
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "browserstack-runner": "^0.4.4",
+    "tape": "^4.6.0",
+    "tap-difflet": "0.4.0"
+  }
 }

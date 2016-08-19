@@ -1,17 +1,35 @@
-var tapeResults = require('tape').getHarness()._results
-
+'use strict'
+var tape = require('tape')
 var start = new Date()
+var logs = ''
 
-tapeResults.on('done', function() {
-	var finish = new Date()
+tape.createStream()
+.on('data', storeLogs)
+.on('close', pollReport)
 
-	var browserStackResults = {
-		runtime: finish.getTime() - start.getTime(),
-		total: tapeResults.count,
-		passed: tapeResults.pass,
-		failed: tapeResults.fail,
-		tracebacks: []
-	}
+function storeLogs (data) {
+  logs += data
+}
 
-	BrowserStack.post('/_report', browserStackResults, function(){})
-})
+function pollReport () {
+  window.BrowserStack
+  ? postLogs()
+  : setTimeout(pollReport, 500)
+}
+
+function postLogs () {
+  logs
+  ? window.BrowserStack.post('/_log', '\n' + logs + '\n ', postReport)
+  : postReport()
+}
+
+function postReport () {
+  var results = tape.getHarness()._results
+  window.BrowserStack.post('/_report', {
+    runtime: new Date().getTime() - start.getTime(),
+    total: results.count,
+    passed: results.pass,
+    failed: results.fail,
+    tracebacks: []
+  }, function () {})
+}
